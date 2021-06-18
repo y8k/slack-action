@@ -15,6 +15,7 @@ do
         type) type=${value} ;;
         status) status=${value} ;;
         *)
+    esac
 done
 
 echo "type = $type"
