@@ -6,23 +6,9 @@ set -eu
 #  exit 1
 #fi
 
-echo "$type"
-echo "$status"
-
-for ARG in "$@"
-do 
-    key=$(echo $ARG | cut -f1 -d=)
-    value=$(echo $ARG | cut -f2 -d=)
-
-    case "$key" in 
-        type) TYPE=${value} ;;
-        status) STATUS=${value} ;;
-        *)
-    esac
-done
-
-echo "type = $TYPE"
-echo "status = $STATUS"
+echo "Hello $1"
+time=$(date)
+echo "::set-output name=time::$time"
 
 #curl -v -X "POST" "https://slack.com/api/chat.postMessage" \
 #     -H "Content-Type: application/json; charset: utf-8" \
