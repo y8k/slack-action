@@ -6,20 +6,21 @@ set -eu
 #  exit 1
 #fi
 
-for argument in "$@"
+echo "$@"
+for ARG in "$@"
 do 
-    key=$(echo $argument | cut -f1 -d=)
-    value=$(echo $argument | cut -f2 -d=)
+    key=$(echo $ARG | cut -f1 -d=)
+    value=$(echo $ARG | cut -f2 -d=)
 
     case "$key" in 
-        type) type=${value} ;;
-        status) status=${value} ;;
+        type) TYPE=${value} ;;
+        status) STATUS=${value} ;;
         *)
     esac
 done
 
-echo "type = $type"
-echo "status = $status"
+echo "type = $TYPE"
+echo "status = $STATUS"
 
 #curl -v -X "POST" "https://slack.com/api/chat.postMessage" \
 #     -H "Content-Type: application/json; charset: utf-8" \
