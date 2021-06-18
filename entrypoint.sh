@@ -11,7 +11,7 @@ do
     key=$(echo $argument | cut -f1 -d=)
     value=$(echo $argument | cut -f2 -d=)
 
-    case "$KEY" in 
+    case "$key" in 
         type) type=${value} ;;
         status) status=${value} ;;
         *)
