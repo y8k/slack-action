@@ -6,7 +6,9 @@ set -eu
 #  exit 1
 #fi
 
-echo "$@"
+echo "$type"
+echo "$status"
+
 for ARG in "$@"
 do 
     key=$(echo $ARG | cut -f1 -d=)
