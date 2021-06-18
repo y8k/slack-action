@@ -6,9 +6,7 @@ set -eu
 #  exit 1
 #fi
 
-echo "Hello $1"
-time=$(date)
-echo "::set-output name=time::$time"
+echo "Hello $type $status"
 
 #curl -v -X "POST" "https://slack.com/api/chat.postMessage" \
 #     -H "Content-Type: application/json; charset: utf-8" \
