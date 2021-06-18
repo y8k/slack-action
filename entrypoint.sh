@@ -6,7 +6,7 @@ set -eu
 #  exit 1
 #fi
 
-echo "Hello $type $status"
+echo "Hello $"
 
 #curl -v -X "POST" "https://slack.com/api/chat.postMessage" \
 #     -H "Content-Type: application/json; charset: utf-8" \
