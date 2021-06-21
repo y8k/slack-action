@@ -1,0 +1,25 @@
+name: 'Post slack via bot'
+description: 'Post message to slack via slack bot'
+inputs:
+  type:
+    description: test/build/deploy
+    required: true
+    default: 'build'
+  title:
+    description: Message title
+    required: true
+    default: '💯 Build is succeed.'
+  author:
+    description: Author
+    required: false
+  pr: 
+    description: Pull Request
+    required: false
+run:
+  using: 'docker'
+  image: 'Dockerfile'
+  args: 
+    - ${{ inputs.type }}
+    - ${{ inputs.title }}
+    - ${{ inputs.author }}
+    - ${{ inputs.pr }}
